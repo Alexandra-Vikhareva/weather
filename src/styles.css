@@ -136,6 +136,8 @@ legend {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 #form button {
@@ -149,4 +151,67 @@ legend {
     background-color: rgb(240,248,255, 0.5);
     border-radius: 10px;
     padding: 5px 10px;
+}
+
+.switch-btn {
+    display: inline-block;
+    width: 72px; 
+    height: 38px; 
+    border-radius: 19px; 
+    background: #bfbfbf; 
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms; 
+    text-align: center;
+}
+
+.switch-btn::after {
+    font-size: 1.6em;
+    content: "F";
+    height: 32px; 
+    width: 32px; 
+    border-radius: 17px;
+    background: #fff; 
+    top: 3px; 
+    left: 3px; 
+    transition-duration: 300ms; 
+    position: absolute;
+    z-index: 1;
+}
+
+.switch-on {
+    background-color: black;
+}
+
+.switch-on::after {
+    left: 37px;
+    content: 'C';
+}
+
+#temperature::after {
+    font-size: 0.5em;
+    content: '°F';
+    position: relative;
+    left: 5px;
+    bottom: 1em;
+}
+
+#feels-like::after {
+    font-size: 0.6em;
+    content: '°F';
+    position: relative;
+    left: 1px;
+    bottom: 1em;
+}
+
+#temperature.celsius::after {
+    content: '°C';
+}
+
+#feels-like.celsius::after {
+    content: '°C';
 }
