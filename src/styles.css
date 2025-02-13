@@ -91,7 +91,7 @@ legend {
 #info {
     background-color: rgb(240,248,255, 0.5);
     margin: 1em;
-    margin-left: 5em;
+    margin-right: 20em;
     padding: 1em;
     border-radius: 10px;
     max-width: 400px;
@@ -123,6 +123,7 @@ legend {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
