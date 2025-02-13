@@ -1,4 +1,14 @@
 import "./styles.css";
+import { createClient } from 'pexels';
+
+const client = createClient('7u3DN54OPhwE6qLJxQSKWJyTp0lz2gMpz6yWbehbv0QumL3lhxOGunaT');
+
+async function getPhoto(query = 'sky'){
+    const adress = await client.photos.search({query, per_page: 1, orientation: 'landscape'});
+    const photo = await adress.photos[0].src['original'];
+    const img = document.querySelector('img');
+    img.src = photo;
+}
 
 async function getWeatherInfo(location = 'london'){
 
@@ -16,6 +26,7 @@ async function getWeatherInfo(location = 'london'){
     feelsLike.textContent = `Feels like: ${weatherData.currentConditions.feelslike}`; 
     wind.textContent = `Wind: ${weatherData.currentConditions.windspeed} MPH`;
     humidity.textContent = `Humidity: ${weatherData.currentConditions.humidity} %`;
+    getPhoto(weatherData.currentConditions.icon);
 }
 
 const search = document.querySelector('#search');
