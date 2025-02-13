@@ -6,8 +6,7 @@ const client = createClient('7u3DN54OPhwE6qLJxQSKWJyTp0lz2gMpz6yWbehbv0QumL3lhxO
 async function getPhoto(query = 'sky'){
     const adress = await client.photos.search({query, per_page: 1, orientation: 'landscape'});
     const photo = await adress.photos[0].src['original'];
-    const img = document.querySelector('img');
-    img.src = photo;
+    document.querySelector('#main-container').style.backgroundImage=`url(${photo})`;
 }
 
 async function getWeatherInfo(location = 'london'){
